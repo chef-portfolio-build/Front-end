@@ -4,9 +4,10 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import HomeIcon from "@material-ui/icons/Home";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,21 +28,20 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
+          <Button edge="start" color="inherit" aria-label="menu">
             <HomeIcon fontSize="large" />
-          </IconButton>
+          </Button>
+          <Button edge="start" color="inherit" aria-label="menu">
+            <AccountBoxIcon fontSize="large" />
+          </Button>
           <Typography variant="h5" className={classes.title}>
             Chef Portfolio
           </Typography>
           <Button color="inherit">
-            <Typography variant="h6" className={classes.title}>
-              Login
-            </Typography>
+            <Typography variant="h6">Login</Typography>
+          </Button>
+          <Button color="inherit">
+            <ExitToAppIcon fontSize="large" />
           </Button>
         </Toolbar>
       </AppBar>

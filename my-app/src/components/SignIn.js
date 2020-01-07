@@ -8,7 +8,9 @@ import Box from "@material-ui/core/Box";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import LocalDiningIcon from "@material-ui/icons/LocalDining";
+
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+
 import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
 
@@ -19,9 +21,7 @@ export default function SignIn() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar>
-          <LocalDiningIcon fontSize="Large" />
-        </Avatar>
+        <AccountBoxIcon fontSize="Large" />
 
         <Typography component="h2" variant="h5">
           Sign in

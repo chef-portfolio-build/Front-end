@@ -9,8 +9,10 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import LocalDiningIcon from "@material-ui/icons/LocalDining";
-import Copyright from './Reusable-Components/Copyright';
-import Styling from './Reusable-Components/Styling';
+
+import Copyright from "./Reusable-Components/Copyright";
+import Styling from "./Reusable-Components/Styling";
+
 
 export default function SignIn() {
   const classes = Styling();
@@ -22,9 +24,7 @@ export default function SignIn() {
         <Avatar>
           <LocalDiningIcon fontSize="Large" />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Chef Portfolio
-        </Typography>
+
         <Typography component="h2" variant="h5">
           Sign in
         </Typography>

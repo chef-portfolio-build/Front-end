@@ -19,10 +19,8 @@ import Box from "@material-ui/core/Box";
 import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
 
-
 export default function Register() {
   const classes = Styling();
-
 
   const [location, setLocation] = React.useState("");
 
@@ -44,8 +42,6 @@ export default function Register() {
         <Avatar>
           <AccountCircleIcon fontSize="Large" />
         </Avatar>
-
-
 
         <Typography component="h1" variant="h5">
           Register

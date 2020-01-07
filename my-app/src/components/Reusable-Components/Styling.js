@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const Styling = makeStyles(theme => ({
+  // SignIn useStyles
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
@@ -18,15 +19,28 @@ const Styling = makeStyles(theme => ({
   submit: {
     margin: theme.spacing(3, 0, 2)
   },
+
+  // Register useStyles
   formControl: {
     width: "100%", //Fixed issue
     margin: theme.spacing(1),
-    marginLeft: 0, //Fix issue
+    marginLeft: 0, //Fixed issue
     minWidth: 120,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+
+  // Navbar useStyles
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  }
 }));
 
 export default Styling

@@ -3,25 +3,31 @@ import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
+
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
+
 import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
+
 
 export default function Register() {
   const classes = Styling();
 
+
   const [location, setLocation] = React.useState("");
 
   const inputLabel = React.useRef("");
+
   const [labelWidth, setLabelWidth] = React.useState(0);
   React.useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth);
@@ -38,6 +44,8 @@ export default function Register() {
         <Avatar>
           <AccountCircleIcon fontSize="Large" />
         </Avatar>
+
+
 
         <Typography component="h1" variant="h5">
           Register
@@ -119,6 +127,8 @@ export default function Register() {
               </Link>
             </Grid>
           </Grid>
+
+
         </form>
       </div>
 
@@ -127,4 +137,6 @@ export default function Register() {
       </Box>
     </Container>
   );
+
 }
+

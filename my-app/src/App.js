@@ -4,6 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import SignIn from "./components/SignIn";
 import Register from "./components/Register-Page";
+import Profile from "./components/Profile";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -21,6 +22,11 @@ function App() {
           <Route path="/register">
             <NavBar />
             <Register />
+          </Route>
+
+          <Route path="/profile">
+            <NavBar />
+            <Profile />
           </Route>
 
         </Switch>

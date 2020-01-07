@@ -24,14 +24,14 @@ const Styling = makeStyles(theme => ({
   formControl: {
     width: "100%", //Fixed issue
     margin: theme.spacing(1),
-    marginLeft: 0, //Fixed issue
+    // marginLeft: 0, //Fix issue
     minWidth: 120,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
 
-  // Navbar useStyles
+  // NavBar useStyles
   root: {
     flexGrow: 1
   },
@@ -40,7 +40,12 @@ const Styling = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
-  }
+  },
+
+  // Profile useStyles
+  margin: {
+    margin: theme.spacing(1),
+  },
 }));
 
 export default Styling

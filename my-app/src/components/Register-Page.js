@@ -19,6 +19,8 @@ import Box from "@material-ui/core/Box";
 import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
 
+// import Location from "./Reusable-Components/Location";
+
 export default function Register() {
   const classes = Styling();
 
@@ -55,7 +57,7 @@ export default function Register() {
             id="username"
             label="Username"
             name="username"
-            autoComplete="username"
+            autoComplete="off"
             autoFocus
           />
           <TextField
@@ -77,7 +79,7 @@ export default function Register() {
             fullWidth
             name="phone"
             label="Phone"
-            type="phone"
+            type="number"
             id="phone"
             autoComplete="current-phone"
           />
@@ -100,7 +102,6 @@ export default function Register() {
               <MenuItem value="Location" disabled>
                 Location
               </MenuItem>
-              <MenuItem value={`San Diego`}>San Diego</MenuItem>
               <MenuItem value={`South Carolina`}>South Carolina</MenuItem>
               <MenuItem value={`New Jersey`}>New Jersey</MenuItem>
             </Select>

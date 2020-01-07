@@ -2,7 +2,6 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -18,8 +17,10 @@ import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 
+
 export default function Register() {
   const classes = Styling();
+
 
   const [location, setLocation] = React.useState("");
 
@@ -39,6 +40,8 @@ export default function Register() {
       <CssBaseline />
       <div className={classes.paper}>
         <AccountBoxIcon fontSize="Large" />
+
+
 
         <Typography component="h1" variant="h5">
           Register
@@ -120,6 +123,8 @@ export default function Register() {
               </Link>
             </Grid>
           </Grid>
+
+
         </form>
       </div>
 
@@ -128,4 +133,6 @@ export default function Register() {
       </Box>
     </Container>
   );
+
 }
+

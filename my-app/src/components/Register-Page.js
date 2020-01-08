@@ -57,7 +57,7 @@ export default function Register() {
             id="username"
             label="Username"
             name="username"
-            autoComplete="off"
+            autoComplete="username"
             autoFocus
           />
           <TextField

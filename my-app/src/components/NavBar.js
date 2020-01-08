@@ -26,7 +26,7 @@ export default function NavBar() {
           <Typography variant="h5" className={classes.title}>
             Chef Portfolio
           </Typography>
-          <Button color="inherit">
+          <Button color="inherit" href="/">
             <Typography variant="h6" className={classes.title}>
               Login
             </Typography>

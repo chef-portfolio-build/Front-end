@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 
+import '../Home-Page.css'
+
 function ApiGet(){
     const [chefInfo, setInfo] = useState([]);
 
@@ -17,19 +19,19 @@ function ApiGet(){
     }, [])
 
     return(
-        <div>
+        <div className="nextTry">
             { chefInfo.map((info, index) => (
-                <section key = {index}>
+                <section key = {index} className='foodContainer'>
                     <ul>
-                        {/*<li>*/}
+                        <li>
                             <figure>
-                                <img src={info.image}/>
+                                <img src={info.image} className= 'posterImage'/>
                                 <h1>{info.food_name}</h1>
                                 <h4>{info.meal_type}</h4>
                                 <h3>{info.description}</h3>
                                 <p>{info.instructions}</p>
                             </figure>
-                        {/*</li>*/}
+                        </li>
                     </ul>
 
                 </section>

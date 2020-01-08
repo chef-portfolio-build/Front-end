@@ -12,18 +12,13 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    flexWrap: 'wrap',
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+    // flexWrap: 'wrap',
   },
   title: {
     fontSize: 14,
   },
   pos: {
-    marginBottom: 12,
+    marginTop: 12,
   },
 });
 
@@ -41,9 +36,9 @@ const Recipes = props => {
           </CardActions>
 
           <CardContent>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
+            {/* <Typography className={classes.title} color="textSecondary" gutterBottom>
               Name of the dish
-            </Typography>
+            </Typography> */}
             <Typography variant="h5" component="h2">
               {recipe.title}
             </Typography>

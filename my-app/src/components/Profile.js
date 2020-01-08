@@ -10,7 +10,7 @@ export default function Profile() {
     const newRecipe = {
       title: recipe.title,
       description: recipe.description,
-      ingredients: recipe.ingredients
+      ingredients: recipe.ingredients,
     };
     setRecipes([...recipes, newRecipe])
   }

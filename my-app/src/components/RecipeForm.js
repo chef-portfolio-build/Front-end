@@ -25,8 +25,6 @@ export default function RecipeForm(props) {
     props.addNewRecipe(recipe)
   };
 
-
-
   return (
     <form onSubmit={submitForm}>
       <Container component="main" maxWidth="xs">
@@ -69,6 +67,20 @@ export default function RecipeForm(props) {
             onChange={handleChange}
           />
 
+          <Button
+            fullWidth
+            variant="contained"
+            component="label"
+            color="primary"
+            className={classes.submit}
+          >
+            Upload Image
+              <input
+              type="file"
+              style={{ display: "none" }}
+            />
+          </Button>
+
           <Button type="submit"
             fullWidth
             variant="outlined"
@@ -77,6 +89,7 @@ export default function RecipeForm(props) {
           >
             Add recipe
         </Button>
+
         </div>
       </Container>
     </form>

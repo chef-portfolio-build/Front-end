@@ -3,9 +3,13 @@ import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Styling from "./Reusable-Components/Styling"
 
-const RecipeForm = props => {
+import Styling from './Reusable-Components/Styling';
+
+export default function RecipeForm(props) {
+
+  const classes = Styling();
+
   const [recipe, setRecipe] = useState({
     title: '',
     description: '',
@@ -21,7 +25,7 @@ const RecipeForm = props => {
     props.addNewRecipe(recipe)
   };
 
-  const classes = Styling();
+
 
   return (
     <form onSubmit={submitForm}>
@@ -60,7 +64,7 @@ const RecipeForm = props => {
             label="Ingredients"
             multiline
             fullWidth
-            rows="8"
+            rows="4"
             value={recipe.ingredients}
             onChange={handleChange}
           />
@@ -78,5 +82,3 @@ const RecipeForm = props => {
     </form>
   )
 }
-
-export default RecipeForm;

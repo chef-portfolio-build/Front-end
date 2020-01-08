@@ -5,11 +5,24 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
+import Link from '@material-ui/core/Link';
 
-import Styling from "./Reusable-Components/Styling"
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  },
+}));
 
 export default function NavBar() {
-  const classes = Styling();
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -23,6 +36,13 @@ export default function NavBar() {
           >
             <HomeIcon fontSize="large" />
           </IconButton>
+
+          <Button color="inherit" href="/profile">
+            <Typography variant="h6" className={classes.title}>
+              Profile
+            </Typography>
+          </Button>
+
           <Typography variant="h5" className={classes.title}>
             Chef Portfolio
           </Typography>

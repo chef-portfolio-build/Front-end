@@ -2,9 +2,9 @@ import React from 'react';
 
 const Recipes = props => {
   return (
-    <div className='recipe-list'>
+    <div>
       {props.recipes.map(recipe => (
-        <div className='recipe'>
+        <div>
           <h4>Name: {recipe.title}</h4>
           <p>Description: {recipe.description}</p>
           <p>Ingredients: {recipe.ingredients}</p>

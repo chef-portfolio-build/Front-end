@@ -17,7 +17,7 @@ function ApiGet(){
             console.log(error)
         })
     }, [])
-
+    
     return(
         <div className="nextTry">
             { chefInfo.map((info, index) => (
@@ -25,7 +25,7 @@ function ApiGet(){
                     <ul>
                         <li>
                             <figure>
-                                <img src={info.image} className= 'posterImage'/>
+                                <img src={info.image}/>
                                 <h1>{info.food_name}</h1>
                                 <h4>{info.meal_type}</h4>
                                 <h3>{info.description}</h3>

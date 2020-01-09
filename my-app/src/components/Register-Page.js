@@ -20,6 +20,7 @@ import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
 
 import Data from "./Reusable-Components/Data";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
 
 export default function Register() {
   const classes = Styling();
@@ -42,9 +43,7 @@ export default function Register() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar>
-          <AccountCircleIcon fontSize="Large" />
-        </Avatar>
+      <AccountBoxIcon fontSize='large'/>
 
         <Typography component="h1" variant="h5">
           Register
@@ -104,8 +103,12 @@ export default function Register() {
                 Location
               </MenuItem>
               {data.map((name, index) => {
-                return <MenuItem key={index} value={name.name}>{name.name}</MenuItem>
-                })}
+                return (
+                  <MenuItem key={index} value={name.name}>
+                    {name.name}
+                  </MenuItem>
+                );
+              })}
             </Select>
           </FormControl>
 
@@ -134,6 +137,4 @@ export default function Register() {
       </Box>
     </Container>
   );
-
 }
-

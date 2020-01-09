@@ -19,10 +19,11 @@ import Box from "@material-ui/core/Box";
 import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
 
+import Data from "./Reusable-Components/Data";
 
 export default function Register() {
   const classes = Styling();
-
+  const data = Data;
 
   const [location, setLocation] = React.useState("");
 
@@ -44,8 +45,6 @@ export default function Register() {
         <Avatar>
           <AccountCircleIcon fontSize="Large" />
         </Avatar>
-
-
 
         <Typography component="h1" variant="h5">
           Register
@@ -81,7 +80,7 @@ export default function Register() {
             fullWidth
             name="phone"
             label="Phone"
-            type="phone"
+            type="number"
             id="phone"
             autoComplete="current-phone"
           />
@@ -104,9 +103,9 @@ export default function Register() {
               <MenuItem value="Location" disabled>
                 Location
               </MenuItem>
-              <MenuItem value={`San Diego`}>San Diego</MenuItem>
-              <MenuItem value={`South Carolina`}>South Carolina</MenuItem>
-              <MenuItem value={`New Jersey`}>New Jersey</MenuItem>
+              {data.map((name, index) => {
+                return <MenuItem key={index} value={name.name}>{name.name}</MenuItem>
+                })}
             </Select>
           </FormControl>
 
@@ -127,8 +126,6 @@ export default function Register() {
               </Link>
             </Grid>
           </Grid>
-
-
         </form>
       </div>
 

@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import SignIn from "./components/SignIn";
 import Register from "./components/Register-Page";
 import Profile from "./components/Profile";
-
+// import ApiGet from "./components/Home-Page";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -12,6 +12,11 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+
+          {/* <Route exact path="/recipe">
+            <NavBar />
+            <ApiGet />
+          </Route> */}
 
           <Route exact path="/">
             <NavBar />

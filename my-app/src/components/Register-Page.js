@@ -11,6 +11,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
+import { withFormik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -21,11 +24,15 @@ import Styling from "./Reusable-Components/Styling";
 
 import Data from "./Reusable-Components/Data";
 
-export default function Register() {
+const Register = ({ values, handleChange }) => {
+  console.log(values)
   const classes = Styling();
   const data = Data;
 
-  const [location, setLocation] = React.useState("");
+  // const [location, setLocation] = React.useState("");
+  // const handleLocation = event => {
+  //   setLocation(event.target.value);
+  // };
 
   const inputLabel = React.useRef("");
 
@@ -33,10 +40,6 @@ export default function Register() {
   React.useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth);
   }, []);
-
-  const handleChange = event => {
-    setLocation(event.target.value);
-  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -49,7 +52,7 @@ export default function Register() {
         <Typography component="h1" variant="h5">
           Register
         </Typography>
-        <form className={classes.form} Validate>
+        <form className={classes.form}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -60,7 +63,11 @@ export default function Register() {
             name="username"
             autoComplete="username"
             autoFocus
+            value={values.username}
+            onChange={handleChange}
           />
+          {/* <ErrorMessage name="username" /> */}
+
           <TextField
             variant="outlined"
             margin="normal"
@@ -71,19 +78,25 @@ export default function Register() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={values.password}
+            onChange={handleChange}
           />
+          {/* <ErrorMessage name="password" /> */}
 
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            name="phone"
+            name="tel"
             label="Phone"
             type="number"
-            id="phone"
-            autoComplete="current-phone"
+            id="tel"
+            autoComplete="current-tel"
+            value={values.tel}
+            onChange={handleChange}
           />
+          {/* <ErrorMessage name="tel" /> */}
 
           <FormControl variant="outlined" className={classes.formControl}>
             <InputLabel ref={inputLabel} id="demo-simple-select-outlined-label">
@@ -94,18 +107,18 @@ export default function Register() {
               margin="normal"
               required
               fullWidth
-              labelId="demo-simple-select-outlined-label"
-              id="demo-simple-select-outlined"
-              value={location}
+              name="location"
+              id="location"
+              value={values.location}
               onChange={handleChange}
               labelWidth={labelWidth}
             >
               <MenuItem value="Location" disabled>
                 Location
               </MenuItem>
-              {data.map((name, index) => {
-                return <MenuItem key={index} value={name.name}>{name.name}</MenuItem>
-                })}
+              {data.map((location, index) => {
+                return <MenuItem key={index} value={location.name}>{location.name}</MenuItem>
+              })}
             </Select>
           </FormControl>
 
@@ -134,6 +147,25 @@ export default function Register() {
       </Box>
     </Container>
   );
-
 }
+
+const FormikRegister = withFormik({
+  mapPropsToValues({ username, password, tel, location }) {
+    return {
+      username: username || '',
+      password: password || '',
+      tel: tel || '',
+      location: location || '',
+    }
+  },
+  validationSchema: Yup.object().shape({
+    username: Yup.string().min(6).required(),
+    password: Yup.string().min(4).required(),
+    // tel: Yup.number().tel().required().min(10),
+    // location: Yup.string().oneOf(['UI-Dev', 'UX-Dev', 'ReactI-Dev', 'ReactII-Dev', 'Backend-Dev']).required(),
+  }),
+
+})(Register)
+export default FormikRegister;
+
 

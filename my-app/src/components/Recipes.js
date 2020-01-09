@@ -20,6 +20,9 @@ const useStyles = makeStyles({
   pos: {
     marginTop: 12,
   },
+  images: {
+    width: '100%',
+  },
 });
 
 const Recipes = props => {
@@ -49,6 +52,10 @@ const Recipes = props => {
             <Typography variant="body2" component="p">
               {recipe.description}
             </Typography>
+            {/* <Typography variant="body2" component="p">
+              {recipe.image}
+            </Typography> */}
+            {recipe.image && <img src={recipe.image} alt="img" className={classes.images} />}
 
             <Typography className={classes.pos} color="textSecondary">
               Ingredients

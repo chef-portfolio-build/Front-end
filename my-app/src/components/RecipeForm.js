@@ -14,11 +14,19 @@ export default function RecipeForm(props) {
     title: '',
     description: '',
     ingredients: '',
+    image: '',
   });
 
   const handleChange = event => {
     setRecipe({ ...recipe, [event.target.id]: event.target.value });
   };
+
+  // const handleImageChange = event => {
+  //   if (event.target.files && event.target.files[0]) {
+  //     const url = URL.createObjectURL(event.target.files[0]);
+  //     setRecipe({ ...recipe, image: url });
+  //   }
+  // }
 
   const submitForm = event => {
     event.preventDefault();
@@ -31,7 +39,8 @@ export default function RecipeForm(props) {
         <div className={classes.paper}>
           <Typography component="h2" variant="h5">
             New Recipe
-      </Typography>
+          </Typography>
+
           <TextField
             id="title"
             name="title"
@@ -55,7 +64,18 @@ export default function RecipeForm(props) {
             onChange={handleChange}
             value={recipe.description}
           />
-          {/* <input id="ingredients" name='ingredients' type='ingredients' placeholder='ingredients' value={recipe.ingredients} onChange={handleChange} /> */}
+
+          <TextField
+            id="image"
+            name="image"
+            label="Image URL"
+            type="image"
+            multiline
+            fullWidth
+            rowsMax="4"
+            onChange={handleChange}
+            value={recipe.image}
+          />
           <TextField
             id="ingredients"
             name="ingredients"
@@ -67,9 +87,9 @@ export default function RecipeForm(props) {
             onChange={handleChange}
           />
 
-          <Button
+          {/* <Button
             fullWidth
-            variant="contained"
+            variant="outlined"
             component="label"
             color="primary"
             className={classes.submit}
@@ -78,12 +98,13 @@ export default function RecipeForm(props) {
               <input
               type="file"
               style={{ display: "none" }}
+              onChange={handleImageChange}
             />
-          </Button>
+          </Button> */}
 
           <Button type="submit"
             fullWidth
-            variant="outlined"
+            variant="contained"
             color="primary"
             className={classes.submit}
           >

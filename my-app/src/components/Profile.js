@@ -11,6 +11,7 @@ export default function Profile() {
       title: recipe.title,
       description: recipe.description,
       ingredients: recipe.ingredients,
+      image: recipe.image,
     };
     setRecipes([...recipes, newRecipe])
   }

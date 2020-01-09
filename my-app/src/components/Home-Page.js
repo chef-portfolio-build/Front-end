@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
+import Expanded from './Reusable-Components/ExpandToggle'
 
 import '../Home-Page.css'
 
@@ -9,7 +10,7 @@ function ApiGet(){
     useEffect(() =>{
         axios.get('https://chef-portfolio1-bw.herokuapp.com/api')
         .then((res) => {
-            console.log(res.data.posts);
+            console.log(res);
             let newData = res.data.posts
             setInfo(newData)
         })
@@ -17,7 +18,7 @@ function ApiGet(){
             console.log(error)
         })
     }, [])
-    
+
     return(
         <div className="nextTry">
             { chefInfo.map((info, index) => (
@@ -25,11 +26,15 @@ function ApiGet(){
                     <ul>
                         <li>
                             <figure>
-                                <img src={info.image}/>
+                                <Expanded 
+                                name={`${info.food_name}`} 
+                                image={`${info.image}`} 
+                                description={`${info.description}`} 
+                                instructions={`${info.instructions}`} 
+                                type={`${info.meal_type}`} />
                                 <h1>{info.food_name}</h1>
-                                <h4>{info.meal_type}</h4>
-                                <h3>{info.description}</h3>
-                                <p>{info.instructions}</p>
+                                 <h4>{info.meal_type}</h4>
+                                 
                             </figure>
                         </li>
                     </ul>

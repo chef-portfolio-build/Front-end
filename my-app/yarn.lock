@@ -8688,6 +8688,11 @@ react-error-overlay@^6.0.4:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.4.tgz#0d165d6d27488e660bc08e57bdabaad741366f7a"
   integrity sha512-ueZzLmHltszTshDMwyfELDq8zOA803wQ1ZuzCccXa1m57k1PxSHfflPD5W9YIiTXLs0JTLzoj6o1LuM5N6zzNA==
 
+react-expand-animated@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-expand-animated/-/react-expand-animated-1.0.1.tgz#62c9293f73fa15ff43170a94d21b81407cfb1177"
+  integrity sha512-fxi6lQwP/OmZWMKvPmWcqpeos0Mnu0gscszf9Y/m62aMPXa3L5bgGQDd0sm8lonRO+qs+oXZgON2TjQ3ZU5ARA==
+
 react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"

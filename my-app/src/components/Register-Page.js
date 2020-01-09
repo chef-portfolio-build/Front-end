@@ -2,6 +2,9 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -15,12 +18,13 @@ import Box from "@material-ui/core/Box";
 
 import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
 
+import Data from "./Reusable-Components/Data";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
 
 export default function Register() {
   const classes = Styling();
-
+  const data = Data;
 
   const [location, setLocation] = React.useState("");
 
@@ -39,9 +43,7 @@ export default function Register() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <AccountBoxIcon fontSize="Large" />
-
-
+      <AccountBoxIcon fontSize='large'/>
 
         <Typography component="h1" variant="h5">
           Register
@@ -77,7 +79,7 @@ export default function Register() {
             fullWidth
             name="phone"
             label="Phone"
-            type="phone"
+            type="number"
             id="phone"
             autoComplete="current-phone"
           />
@@ -100,9 +102,13 @@ export default function Register() {
               <MenuItem value="Location" disabled>
                 Location
               </MenuItem>
-              <MenuItem value={`San Diego`}>San Diego</MenuItem>
-              <MenuItem value={`South Carolina`}>South Carolina</MenuItem>
-              <MenuItem value={`New Jersey`}>New Jersey</MenuItem>
+              {data.map((name, index) => {
+                return (
+                  <MenuItem key={index} value={name.name}>
+                    {name.name}
+                  </MenuItem>
+                );
+              })}
             </Select>
           </FormControl>
 
@@ -123,8 +129,6 @@ export default function Register() {
               </Link>
             </Grid>
           </Grid>
-
-
         </form>
       </div>
 
@@ -133,6 +137,4 @@ export default function Register() {
       </Box>
     </Container>
   );
-
 }
-

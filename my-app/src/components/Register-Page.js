@@ -134,7 +134,7 @@ const Register = ({ values, handleChange }) => {
 
           <Grid container>
             <Grid item>
-              <Link href="/" variant="body2">
+              <Link href="/login" variant="body2">
                 {"Already have an account? Sign In"}
               </Link>
             </Grid>

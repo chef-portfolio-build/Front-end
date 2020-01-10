@@ -8,10 +8,13 @@ import Box from "@material-ui/core/Box";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import LocalDiningIcon from "@material-ui/icons/LocalDining";
 
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+// import { axiosWithAuth } from "../utils/axiosWithAuth"
 import Copyright from "./Reusable-Components/Copyright";
 import Styling from "./Reusable-Components/Styling";
+// import { Form, Field, withFormik, yupToFormErrors } from "formik";
+// import * as Yup from "yup";
 
 
 export default function SignIn() {
@@ -21,9 +24,7 @@ export default function SignIn() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar>
-          <LocalDiningIcon fontSize="Large" />
-        </Avatar>
+        <AccountBoxIcon fontSize="Large" />
 
         <Typography component="h2" variant="h5">
           Sign in
@@ -76,3 +77,35 @@ export default function SignIn() {
     </Container>
   );
 }
+
+// const FormikSignIn = withFormik({
+//   mapPropsToValues({ username, password }) {
+//     return {
+//       username: username || '',
+//       password: password || '',
+//     }
+//   },
+//   validationSchema: Yup.object().shape({
+//     username: Yup.string().required('Username required'),
+//     password: Yup.string().required('Password required'),
+//   }),
+
+//   handleSubmit(values, { resetForm, setStatus, props }) {
+//     const submitValue = {
+//       username: values.username,
+//       password: values.password,
+//     }
+//     console.log(values.username, values.password)
+//     axiosWithAuth.post("/login", submitValue)
+//       .then(res => {
+//         console.log(res.data.message)
+//         setStatus(res.data.token)
+//         resetForm()
+//         localStorage.setItem('token', res.data.token)
+//         props.history.push('/profile')
+//       })
+//       .catch(err => {
+//         console.log(err.response)
+//       })
+//   }
+// })(SignIn)

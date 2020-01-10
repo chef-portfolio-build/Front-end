@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import SignIn from "./components/SignIn";
 import Register from "./components/Register-Page";
 import Profile from "./components/Profile";
-// import ApiGet from "./components/Home-Page";
+import ApiGet from "./components/Home-Page"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -13,12 +13,12 @@ function App() {
       <div className="App">
         <Switch>
 
-          {/* <Route exact path="/recipe">
+        <Route exact path="/">
             <NavBar />
-            <ApiGet />
-          </Route> */}
+            <ApiGet/>
+          </Route>
 
-          <Route exact path="/">
+          <Route exact path="/login">
             <NavBar />
             <SignIn />
           </Route>

@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
-  },
+  }
 }));
 
 export default function NavBar() {
@@ -28,7 +28,7 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Button edge="start" color="inherit" aria-label="menu" href="/recipe">
+          <Button edge="start" color="inherit" aria-label="menu" href="/">
             <HomeIcon fontSize="large" />
           </Button>
           <Button edge="start" color="inherit" aria-label="menu" href="/profile">
@@ -37,7 +37,7 @@ export default function NavBar() {
           <Typography variant="h5" className={classes.title}>
             Chef Portfolio
           </Typography>
-          <Button color="inherit" href="/">
+          <Button color="inherit" href="/login">
             <Typography variant="h6">Login</Typography>
           </Button>
           <Button color="inherit">

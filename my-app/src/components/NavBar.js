@@ -47,4 +47,5 @@ export default function NavBar() {
       </AppBar>
     </div>
   );
+  
 }
